@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formula General</title>
+    <link rel="stylesheet" href="cssContador/styless.css"
+</head>
+<body>
+    <section id = "global">
+    <header>
+        <div id="logo">
+            Examen HTML
+        </div>
+        <div class="clearfix"></div>
+        <nav id="menu">
+            <ul>
+                <a href="index.html" ><li>Inicio</li></a>
+                <a href="formulaGeneral.html" ><li>Formula General</li></a>
+                <a href="fibonachi.html"><li>Serie</li></a>
+                <a href="contador.html"><li>Contador</li></a>
+            </ul>
+        </nav>
+    </header>
+    <!-- Segun lo visto en clase en la actividad de la calculadora -->
+    <h2>Calculadora de formula general</h2>
+    <body>
+        <h2>Ecuacion Cuadratica</h2>
+        <p>
+            Calculadora
+        </p>
+        <p id = "Resultado"></p>
+        
+        <script>
+            function myFunction(){
+                var a,b,c,x1,x2;
+                a = parseFloat(document.getElementById("a").value);
+                b = parseFloat(document.getElementById("b").value);
+                c = parseFloat(document.getElementById("c").value);
+
+                if(isNaN(a) || isNaN(b) || isNaN(c)){
+                    text = "Es necesario introducir numeros"
+                }
+                
+                else{
+
+                    var x = (b*b)-(4*a*c);
+                    var y = Math.sqrt(x);
+                    x1 = (-b+y)/(2*a)
+                    x2 = (-b-y)/(2*a)
+                   
+                    text = "El valor de x1 es:" + x1 + " "+"El valor de x2 es:" + x2
+                    
+                }
+                document.getElementById("Resultado").innerHTML = text;
+                
+                
+            }
+        </script>
+        <input id = "a"><br>
+        <input id = "b"><br>
+        <input id = "c"><br>
+        <button type = "button" onclick="myFunction()">Formula</button>
+        
+    </body>
+    </section>
+</body>
+</html>
